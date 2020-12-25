@@ -56,7 +56,7 @@ app.post("/add_listing", (req, res) => {
               locations: req.body.location,
               seller_img: req.body.saller_img,
               photo_name: req.body.photo_name,
-              approved: false,
+              approved: true,
             });
             saller_detaile
               .save()
