@@ -3,7 +3,7 @@ const app = express.Router();
 const saller = require("./modules/authentication");
 const bcrypt = require("bcrypt");
 
-app.get("/get_listing", (req, res) => {
+app.post("/get_listing", (req, res) => {
   let skip = 0
   let arr = []
   if (req.body.skip !== undefined) {
