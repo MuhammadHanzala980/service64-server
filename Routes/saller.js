@@ -12,7 +12,7 @@ app.post("/get_listing", (req, res) => {
   saller
     .find({
       user_type: "Seller",
-      // approved: true
+      approved: true
     })
     .skip(Number(skip))
     .limit(Number(16))
@@ -56,7 +56,7 @@ app.post("/add_listing", (req, res) => {
               locations: req.body.location,
               seller_img: req.body.saller_img,
               photo_name: req.body.photo_name,
-              approved: true,
+              approved: false,
             });
             saller_detaile
               .save()
