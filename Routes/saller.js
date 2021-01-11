@@ -16,6 +16,7 @@ app.post("/get_listing", (req, res) => {
     })
     .skip(Number(skip))
     .limit(Number(16))
+    .sort({ _id: -1 })
     .exec()
     .then((list) => {
       arr = list.splice(0, 15)
@@ -73,7 +74,6 @@ app.post("/add_listing", (req, res) => {
 });
 
 app.post("/get_listing/usr", (req, res) => {
-  console.log(req.body);
   saller
     .find({ _id: req.body._id })
     .then((list) => {

@@ -18,6 +18,7 @@ app.post("/search", async (req, res) => {
       })
       .skip(Number(skip))
       .limit(Number(16))
+      .sort({ _id: -1 })
       .exec()
       .then((list) => {
         if (list.length > 0) {
@@ -49,11 +50,13 @@ app.post("/searchbycity", async (req, res) => {
 
     await search
       .find({
-        // approved: true,
+        approved: true,
         city: req.body.city,
       })
       .skip(Number(skip))
       .limit(Number(16))
+      .sort({ _id: -1 })
+
       .exec()
       .then((list) => {
         if (list.length > 0) {
@@ -88,6 +91,8 @@ app.post("/searchbycategory", async (req, res) => {
       })
       .skip(Number(skip))
       .limit(Number(16))
+      .sort({ _id: -1 })
+
       .exec()
       .then((list) => {
         if (list.length > 0) {
@@ -118,10 +123,11 @@ app.post("/searchbylocation", async (req, res) => {
       .find({
         locations: { $all: [req.body.location] },
         city: req.body.city,
-        // approved: true,
+        approved: true,
       })
       .skip(Number(skip))
       .limit(Number(16))
+      .sort({ _id: -1 })
       .exec()
       .then((list) => {
         if (list.length > 0) {
@@ -156,6 +162,8 @@ app.post("/recommendedcategory", async (req, res) => {
       })
       .skip(Number(skip))
       .limit(Number(16))
+      .sort({ _id: -1 })
+      
       .exec()
       .then((list) => {
         if (list.length > 0) {
