@@ -11,6 +11,7 @@ app.post('/mailtoadmin', async (req, res) => {
             port: 465,
             secure: true,
             auth: {
+                type: 'OAuth2',
                 user:'service64test@gmail.com',
                 pass: 'testforService64',
             }
