@@ -8,6 +8,9 @@ app.post('/mailtoadmin', async (req, res) => {
     try {
         let transporter = nodemailer.createTransport(smtpPool({
             service: 'gmail',
+            host: "smtp.ethereal.email",
+            port: 587,
+            secure: false, 
             auth: {
                 user:'service64test@gmail.com',
                 pass: 'testforService64',
