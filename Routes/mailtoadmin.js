@@ -33,8 +33,8 @@ async function sendMail(req) {
 
         let mailOptions = {
             from: '"Service64" <service64test@gmail.com>',
-            to: 'muhammadhanzala980@gmail.com',
-            subject: 'Testing and sendmail',
+            to: ' support@service64.com',
+            subject: '',
             text: 'For clients with plaintext support only',
             html: '<h3> Name: ' + req.body.name + '</h3>' + '<h4> Email: ' + req.body.email + '</h4>' + '<p> Message: ' + req.body.message + '</p>',
         }
