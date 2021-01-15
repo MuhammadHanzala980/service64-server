@@ -26,7 +26,7 @@ app.post('/mailtoadmin', async (req, res) => {
         await transporter.sendMail(mailOptions, function (err, data) {
             if (err) {
                 res.send({
-                    message: 'Error',
+                    message: 'Not Send Error',
                     err: err
                 })
             }
